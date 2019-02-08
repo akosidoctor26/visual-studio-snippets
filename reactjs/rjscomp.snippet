@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>rjscomp</Title>
+      <Author>
+      </Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>rjscomp</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>COMPONENT_NAME</ID>
+          <ToolTip>Name of the Component</ToolTip>
+          <Default>COMPONENT_NAME</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="cpp" Delimiter="$"><![CDATA[import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
+class $COMPONENT_NAME$ extends Component {
+  state = {}
+
+  // -- Event Handlers
+
+  // -- Lifecycle Methods
+  componentDidMount() {}
+      
+  render() {
+    const { } = this.props;
+    return (<div></div>);
+  }
+}
+
+$COMPONENT_NAME$.propTypes = {
+}
+
+$COMPONENT_NAME$.displayName = $COMPONENT_NAME$Component;
+
+export default $COMPONENT_NAME$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

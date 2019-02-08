@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>rjsreqaction</Title>
+      <Author>
+      </Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>rjsreqaction</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>ACTION_NAME</ID>
+          <ToolTip>The name of  the action</ToolTip>
+          <Default>ACTION_NAME</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>ACTION_TYPE</ID>
+          <ToolTip>The type of action</ToolTip>
+          <Default>ACTION_TYPE</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="cpp" Delimiter="$"><![CDATA[import { $ACTION_TYPE$, $ACTION_TYPE$_FULFILLED, $ACTION_TYPE$_FAILED, $ACTION_TYPE$_LOADING } from './types';
+
+/**
+ * Action for triggering
+ * @param {*} payload
+ *
+ */
+export const $ACTION_NAME$ = payload => ({
+  type: $ACTION_TYPE$,
+  payload,
+});
+
+/**
+ * Response action when request
+ * returns successfully.
+ */
+export const $ACTION_NAME$Fufilled = payload => ({
+  type: $ACTION_TYPE$_FULFILLED,
+  payload,
+});
+
+/**
+ * Response action request
+ * returns an error.
+ */
+export const $ACTION_NAME$Failed = err => ({
+  type: $ACTION_TYPE$_FAILED,
+  payload: err,
+});
+
+/**
+ * Response action when request
+ * call is in progress
+ */
+export const $ACTION_NAME$Loading = () => ({
+  type: $ACTION_TYPE$_LOADING,
+});
+]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
