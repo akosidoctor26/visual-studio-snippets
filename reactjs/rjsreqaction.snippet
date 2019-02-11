@@ -31,7 +31,7 @@
           </Function>
         </Literal>
       </Declarations>
-      <Code Language="cpp" Delimiter="$"><![CDATA[import { $ACTION_TYPE$, $ACTION_TYPE$_FULFILLED, $ACTION_TYPE$_FAILED, $ACTION_TYPE$_LOADING } from './types';
+      <Code Language="javascript" Delimiter="$"><![CDATA[import { $ACTION_TYPE$, $ACTION_TYPE$_FULFILLED, $ACTION_TYPE$_FAILED, $ACTION_TYPE$_LOADING } from './types';
 
 /**
  * Action for triggering
@@ -47,7 +47,7 @@ export const $ACTION_NAME$ = payload => ({
  * Response action when request
  * returns successfully.
  */
-export const $ACTION_NAME$Fufilled = payload => ({
+export const $ACTION_NAME$Fulfilled = payload => ({
   type: $ACTION_TYPE$_FULFILLED,
   payload,
 });

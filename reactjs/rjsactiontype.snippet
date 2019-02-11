@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>rjsactiontype</Title>
+      <Author>
+      </Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>rjsactiontype</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>ACTION_NAME</ID>
+          <ToolTip>ACTION_NAME</ToolTip>
+          <Default>ACTION_NAME</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>DESCRIPTION</ID>
+          <ToolTip>DESCRIPTION</ToolTip>
+          <Default>DESCRIPTION</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>STATE_NODE</ID>
+          <ToolTip>STATE_NODE</ToolTip>
+          <Default>STATE_NODE</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>ACTION_GROUP</ID>
+          <ToolTip>ACTION_GROUP</ToolTip>
+          <Default>ACTION_GROUP</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="javascript" Delimiter="$"><![CDATA[export const $ACTION_GROUP$ = {
+  $ACTION_NAME$: '[ $STATE_NODE$ ] $ACTION_NAME$ - $DESCRIPTION$',
+  $ACTION_NAME$_FULFILLED: '[ $STATE_NODE$ ] $ACTION_NAME$_FULFILLED - $DESCRIPTION$ fulfilled',
+  $ACTION_NAME$_FAILED: '[ $STATE_NODE$ ] $ACTION_NAME$_FAILED - $DESCRIPTION$ failed',
+  $ACTION_NAME$_LOADING: '[ $STATE_NODE$ ] $ACTION_NAME$_LOADING - $DESCRIPTION$ loading',
+}; ]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -24,11 +24,18 @@
           </Function>
         </Literal>
       </Declarations>
-      <Code Language="cpp" Delimiter="$"><![CDATA[import React from 'react';
+      <Code Language="javascript" Delimiter="$"><![CDATA[import React from 'react';
+import PropTypes from 'prop-types';
 
-export default $COMPONENT_NAME$ = (props) => {
+const $COMPONENT_NAME$ = (props) => {
   return (<div></div>);
-}]]></Code>
+}
+
+$COMPONENT_NAME$.displayName = '$COMPONENT_NAME$';
+$COMPONENT_NAME$.propTypes = {
+};
+
+export default $COMPONENT_NAME$;]]></Code>
     </Snippet>
   </CodeSnippet>
 </CodeSnippets>
