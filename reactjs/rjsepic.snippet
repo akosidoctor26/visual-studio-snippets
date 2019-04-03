@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>rjsepic</Title>
+      <Author>
+      </Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>rjsepic</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>ACTION_NAME</ID>
+          <ToolTip>ACTION_NAME</ToolTip>
+          <Default>ACTION_NAME</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>ACTION</ID>
+          <ToolTip>ACTION</ToolTip>
+          <Default>ACTION</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>TYPE</ID>
+          <ToolTip>TYPE</ToolTip>
+          <Default>TYPE</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>URL_CONSTANT</ID>
+          <ToolTip>URL_CONSTANT</ToolTip>
+          <Default>URL_CONSTANT</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="javascript" Delimiter="$"><![CDATA[import { combineEpics, ofType } from 'redux-observable';
+import { catchError, switchMap, startWith } from 'rxjs/operators';
+import { defer, of, Observable } from 'rxjs';
+
+import { $ACTION_NAME$Loading, $ACTION_NAME$Fulfilled, $ACTION_NAME$Failed } from 'actions';
+import { $ACTION$ } from 'actions/types';
+import { API_PATHS } from 'utils/constants';
+
+/**
+ * <Enter Description Here>
+ * @param {any} payload
+ * @param {any} api
+ */
+const fetchMap = (payload, request) =>
+  Observable.create(async observer => {
+    try {
+      const data = await request.post(API_PATHS.$URL_CONSTANT$,
+        {
+          params: {
+          },
+          data: {}
+        });
+
+      observer.next($ACTION_NAME$Fulfilled(data));
+    } catch (err) {
+      observer.error(err);
+    } finally {
+      observer.complete();
+    }
+  }).pipe(startWith($ACTION_NAME$Loading()));
+
+const fetchEpic = (action$$, state$$, { request }) =>
+  action$$.pipe(
+    ofType($ACTION$.$TYPE$),
+    switchMap(({ payload }) => defer(() => fetchMap(payload, request))),
+    catchError((err) => of($ACTION_NAME$Failed(err)))
+  );
+
+export default combineEpics(fetchEpic);
+]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
