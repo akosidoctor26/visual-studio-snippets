@@ -1,0 +1,20 @@
+{
+	"reactfcomp": {
+		"prefix": "rjsfcomp",
+		"body": [
+			"import React from 'react';",
+			"import PropTypes from 'prop-types';",
+			"",
+			"const $1 = () => {",
+			"  return <div></div>;",
+			"};",
+			"",
+			"$1.defaultProps = {};",
+			"$1.displayName = '$1';",
+			"$1.propTypes = {};",
+			"export default $1;",
+			""
+		],
+		"description": "ReactJS Functional Component"
+	}
+}
